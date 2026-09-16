@@ -1,0 +1,30 @@
+<input id="input" type="number" min="1" max="10" />
+<button onclick="match()">Check</button>
+<p id="result"></p>
+<p id="score"></p>
+
+<script>
+  var input = document.getElementById("input");
+  var result = document.getElementById("result");
+  var score = document.getElementById("score");
+
+  var random = Math.floor(Math.random() * 10) + 1;
+  var count = 0;
+
+  function match() {
+    var value = Number(input.value);
+
+    if (value == random) {
+      count = count + 1;
+
+      result.textContent = "You guessed it correct";
+      score.textContent = "Your score: " + count;
+      console.log(alert("Congrats! Now, the number has been resetted"));
+
+      // Generate a new number for the next round
+      random = Math.floor(Math.random() * 10) + 1;
+    } else {
+      result.textContent = "You guessed it wrong. Try again!";
+    }
+  }
+</script>
